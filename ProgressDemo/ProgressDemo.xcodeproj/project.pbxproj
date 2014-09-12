@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D759243E19C29D080011B01C /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D759243B19C29D080011B01C /* FBShimmeringLayer.m */; };
+		D759243F19C29D080011B01C /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = D759243D19C29D080011B01C /* FBShimmeringView.m */; };
 		F36F0C4319C1D904007EC66D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36F0C4219C1D904007EC66D /* Foundation.framework */; };
 		F36F0C4519C1D904007EC66D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36F0C4419C1D904007EC66D /* CoreGraphics.framework */; };
 		F36F0C4719C1D904007EC66D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36F0C4619C1D904007EC66D /* UIKit.framework */; };
@@ -35,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D759243819C29D080011B01C /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
+		D759243919C29D080011B01C /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
+		D759243A19C29D080011B01C /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
+		D759243B19C29D080011B01C /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
+		D759243C19C29D080011B01C /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringView.h; sourceTree = "<group>"; };
+		D759243D19C29D080011B01C /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringView.m; sourceTree = "<group>"; };
 		F36F0C3F19C1D904007EC66D /* ProgressDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgressDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36F0C4219C1D904007EC66D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F36F0C4419C1D904007EC66D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,9 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D759243719C29D080011B01C /* FBShimmering */ = {
+			isa = PBXGroup;
+			children = (
+				D759243819C29D080011B01C /* FBShimmering-Prefix.pch */,
+				D759243919C29D080011B01C /* FBShimmering.h */,
+				D759243A19C29D080011B01C /* FBShimmeringLayer.h */,
+				D759243B19C29D080011B01C /* FBShimmeringLayer.m */,
+				D759243C19C29D080011B01C /* FBShimmeringView.h */,
+				D759243D19C29D080011B01C /* FBShimmeringView.m */,
+			);
+			path = FBShimmering;
+			sourceTree = "<group>";
+		};
 		F36F0C3619C1D904007EC66D = {
 			isa = PBXGroup;
 			children = (
+				D759243719C29D080011B01C /* FBShimmering */,
 				F36F0C7719C1DA09007EC66D /* ProgressView */,
 				F36F0C4819C1D904007EC66D /* ProgressDemo */,
 				F36F0C6719C1D904007EC66D /* ProgressDemoTests */,
@@ -263,7 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36F0C5919C1D904007EC66D /* ViewController.m in Sources */,
+				D759243F19C29D080011B01C /* FBShimmeringView.m in Sources */,
 				F36F0C7A19C1DB76007EC66D /* ProgressView.m in Sources */,
+				D759243E19C29D080011B01C /* FBShimmeringLayer.m in Sources */,
 				F36F0C5319C1D904007EC66D /* AppDelegate.m in Sources */,
 				F36F0C4F19C1D904007EC66D /* main.m in Sources */,
 			);
