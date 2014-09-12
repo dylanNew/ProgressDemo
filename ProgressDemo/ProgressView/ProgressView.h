@@ -10,7 +10,7 @@
 
 @interface ProgressView : UIView
 
-- (void)setPercent:(float)percent animated:(BOOL)anmated;
+- (void)setPercent:(float)percent animated:(BOOL)animated;
 
 
 

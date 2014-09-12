@@ -13,6 +13,7 @@ static CGFloat progressLineWidth = 4;
 @interface ProgressView ()
 
 @property (nonatomic, strong) CAShapeLayer *progressLayer;
+@property (nonatomic, strong) UILabel *prencetLabel;
 
 @end
 
@@ -23,6 +24,7 @@ static CGFloat progressLineWidth = 4;
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self layoutAnimatedLayer];
     }
     return self;
 }
@@ -67,9 +69,43 @@ static CGFloat progressLineWidth = 4;
     CALayer *gradientLayer = [CALayer layer];
     
     CAGradientLayer *gradientLayer1 = [CAGradientLayer layer];
-//    gradientLayer1.frame = CGRectMake(0, 0, <#CGFloat width#>, <#CGFloat height#>)
+    gradientLayer1.frame = CGRectMake(0, 0, width/2, hegith);
+    gradientLayer1.colors = @[(id)[[UIColor redColor] CGColor],(id)[[UIColor yellowColor] CGColor]];
+    gradientLayer1.locations = @[@0.5,@0.9,@1];
+    gradientLayer1.startPoint = CGPointMake(0.5, 1);
+    gradientLayer1.endPoint = CGPointMake(0.5, 0);
+    [gradientLayer addSublayer:gradientLayer1];
     
+    CAGradientLayer *gradientLayer2 = [CAGradientLayer layer];
+    gradientLayer2.frame = CGRectMake(width/2, 0, width/2, hegith);
+    gradientLayer2.colors = @[(id)[[UIColor blueColor] CGColor],(id)[[UIColor yellowColor] CGColor]];
+    gradientLayer2.locations = @[@0.1,@0.9,@1];
+    gradientLayer2.startPoint = CGPointMake(0.5, 1);
+    gradientLayer2.endPoint = CGPointMake(0.5, 0);
+    [gradientLayer addSublayer:gradientLayer2];
     
+    gradientLayer.mask = self.progressLayer;
+    [self.layer addSublayer:gradientLayer];
+    
+    self.prencetLabel = [[UILabel alloc] init];
+    [self.prencetLabel setBackgroundColor:[UIColor redColor]];
+    [self.prencetLabel setTextAlignment:NSTextAlignmentCenter];
+    self.prencetLabel.center = CGPointMake(width/2, hegith/2);
+    [self addSubview:self.prencetLabel];
+}
+
+- (void)setPercent:(float)percent animated:(BOOL)animated
+{
+    [CATransaction begin];
+    [CATransaction setDisableActions:!animated];
+    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+    [CATransaction setAnimationDuration:1];
+    self.progressLayer.strokeEnd = percent;
+    [CATransaction commit];
+    
+    self.prencetLabel.text = [NSString stringWithFormat:@"%.2f%%",percent * 100];
+    [self.prencetLabel sizeToFit];
+    self.prencetLabel.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
 }
 
 #pragma mark - 
@@ -77,5 +113,6 @@ static CGFloat progressLineWidth = 4;
 {
     progressLineWidth = width;
 }
+
 
 @end
