@@ -27,7 +27,7 @@
     [progressView setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:progressView];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(change:) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:.9 target:self selector:@selector(change:) userInfo:nil repeats:YES];
 }
 
 - (void)change:(id)sender
